@@ -1,3 +1,21 @@
+<form
+    id="newsletterForm"
+    action="https://formspree.io/f/mdekzjyv"
+    method="POST"
+>
+    <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Seu melhor e-mail"
+        required
+    >
+
+    <input
+        type="hidden"
+        name="_subject"
+        value="Novo cadastro na newsletter — Lumière"
+    >
 /* =========================
    PRODUTOS
 ========================= */
@@ -508,3 +526,13 @@ newsletterForm.addEventListener("submit", async (event) => {
     }
 
 });
+    <button type="submit">
+        INSCREVER
+    </button>
+</form>
+
+<p
+    id="newsletterMessage"
+    class="message"
+    aria-live="polite"
+></p>
