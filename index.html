@@ -1,53 +1,110 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>LUMIÈRE — Moda & Estilo</title>
 
+    <meta
+        name="description"
+        content="Lumière — moda, estilo e peças exclusivas."
+    >
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- CABEÇALHO -->
+    <!-- HEADER -->
     <header class="header">
-        <div class="logo">LUMIÈRE</div>
+
+        <div class="logo">
+            LUMIÈRE
+        </div>
 
         <nav class="nav">
+
             <a href="#inicio">Início</a>
+
             <a href="#colecao">Coleção</a>
+
             <a href="#sobre">Sobre</a>
+
             <a href="#contato">Contato</a>
+
         </nav>
 
         <div class="header-actions">
-            <button id="searchBtn" class="icon-btn">⌕</button>
-            <button id="cartBtn" class="cart-btn">
-                🛍️ <span id="cartCount">0</span>
+
+            <button
+                id="searchBtn"
+                class="icon-btn"
+                type="button"
+                aria-label="Pesquisar"
+            >
+                ⌕
             </button>
+
+            <button
+                id="cartBtn"
+                class="cart-btn"
+                type="button"
+                aria-label="Abrir carrinho"
+            >
+                🛍️
+                <span id="cartCount">0</span>
+            </button>
+
         </div>
+
     </header>
 
+
     <!-- BUSCA -->
-    <div id="searchBox" class="search-box">
+
+    <div
+        id="searchBox"
+        class="search-box"
+    >
+
         <input
             type="text"
             id="searchInput"
             placeholder="Buscar produtos..."
+            autocomplete="off"
         >
+
     </div>
 
-    <!-- HERO -->
+
+    <!-- CONTEÚDO -->
+
     <main>
 
-        <section id="inicio" class="hero">
+        <!-- HERO -->
+
+        <section
+            id="inicio"
+            class="hero"
+        >
+
             <div class="hero-content">
-                <p class="subtitle">NOVA COLEÇÃO 2026</p>
+
+                <p class="subtitle">
+                    NOVA COLEÇÃO 2026
+                </p>
 
                 <h1>
                     Vista sua
@@ -59,79 +116,172 @@
                     estilo em personalidade.
                 </p>
 
-                <a href="#colecao" class="btn">EXPLORAR COLEÇÃO</a>
+                <a
+                    href="#colecao"
+                    class="btn"
+                >
+                    EXPLORAR COLEÇÃO
+                </a>
+
             </div>
+
         </section>
+
 
         <!-- CATEGORIAS -->
+
         <section class="categories">
-            <div class="category-card">
+
+            <a
+                href="#colecao"
+                class="category-card"
+            >
                 <span>01</span>
                 <h3>Vestidos</h3>
-            </div>
+            </a>
 
-            <div class="category-card">
+            <a
+                href="#colecao"
+                class="category-card"
+            >
                 <span>02</span>
                 <h3>Blusas</h3>
-            </div>
+            </a>
 
-            <div class="category-card">
+            <a
+                href="#colecao"
+                class="category-card"
+            >
                 <span>03</span>
                 <h3>Calças</h3>
-            </div>
+            </a>
 
-            <div class="category-card">
+            <a
+                href="#colecao"
+                class="category-card"
+            >
                 <span>04</span>
                 <h3>Acessórios</h3>
-            </div>
+            </a>
+
         </section>
 
-        <!-- PRODUTOS -->
-        <section id="colecao" class="products-section">
+
+        <!-- COLEÇÃO -->
+
+        <section
+            id="colecao"
+            class="products-section"
+        >
 
             <div class="section-header">
+
                 <div>
-                    <p class="subtitle">SELEÇÃO LUMIÈRE</p>
-                    <h2>Peças em destaque</h2>
+
+                    <p class="subtitle">
+                        SELEÇÃO LUMIÈRE
+                    </p>
+
+                    <h2>
+                        Peças em destaque
+                    </h2>
+
                 </div>
 
-                <select id="categoryFilter">
-                    <option value="todos">Todos</option>
-                    <option value="vestidos">Vestidos</option>
-                    <option value="blusas">Blusas</option>
-                    <option value="calcas">Calças</option>
-                    <option value="acessorios">Acessórios</option>
+
+                <select
+                    id="categoryFilter"
+                    aria-label="Filtrar produtos"
+                >
+
+                    <option value="todos">
+                        Todos
+                    </option>
+
+                    <option value="vestidos">
+                        Vestidos
+                    </option>
+
+                    <option value="blusas">
+                        Blusas
+                    </option>
+
+                    <option value="calcas">
+                        Calças
+                    </option>
+
+                    <option value="acessorios">
+                        Acessórios
+                    </option>
+
                 </select>
+
             </div>
 
-            <div id="products" class="products-grid"></div>
+
+            <!-- PRODUTOS CARREGADOS PELO JAVASCRIPT -->
+
+            <div
+                id="products"
+                class="products-grid"
+            ></div>
 
         </section>
+
 
         <!-- BANNER -->
+
         <section class="banner">
+
             <div>
-                <p class="subtitle">ESSENCIAL • ELEGANTE • ATEMPORAL</p>
-                <h2>Seu estilo,<br>suas regras.</h2>
-                <a href="#colecao" class="btn btn-light">
+
+                <p class="subtitle">
+                    ESSENCIAL • ELEGANTE • ATEMPORAL
+                </p>
+
+                <h2>
+                    Seu estilo,
+                    <br>
+                    suas regras.
+                </h2>
+
+                <a
+                    href="#colecao"
+                    class="btn btn-light"
+                >
                     COMPRAR AGORA
                 </a>
+
             </div>
+
         </section>
 
+
         <!-- SOBRE -->
-        <section id="sobre" class="about">
+
+        <section
+            id="sobre"
+            class="about"
+        >
+
             <div class="about-image"></div>
 
-            <div class="about-content">
-                <p class="subtitle">SOBRE A LUMIÈRE</p>
 
-                <h2>Moda que conta uma história.</h2>
+            <div class="about-content">
+
+                <p class="subtitle">
+                    SOBRE A LUMIÈRE
+                </p>
+
+                <h2>
+                    Moda que conta uma história.
+                </h2>
 
                 <p>
-                    A Lumière nasceu para criar uma nova relação com a moda:
-                    peças sofisticadas, versáteis e pensadas para acompanhar
-                    diferentes momentos da vida.
+                    A Lumière nasceu para criar uma nova relação
+                    com a moda: peças sofisticadas, versáteis e
+                    pensadas para acompanhar diferentes momentos
+                    da vida.
                 </p>
 
                 <p>
@@ -139,85 +289,213 @@
                     É encontrar aquilo que representa quem você é.
                 </p>
 
-                <button class="btn" id="aboutBtn">
+                <button
+                    id="aboutBtn"
+                    class="btn"
+                    type="button"
+                >
                     CONHEÇA NOSSA HISTÓRIA
                 </button>
+
             </div>
+
         </section>
 
-        <!-- NEWSLETTER -->
+
+        <!-- NEWSLETTER / FORMSPREE -->
+
         <section class="newsletter">
-            <p class="subtitle">FIQUE POR DENTRO</p>
 
-            <h2>Receba novidades da Lumière.</h2>
-
-            <p>
-                Cadastre seu e-mail para receber lançamentos e ofertas.
+            <p class="subtitle">
+                FIQUE POR DENTRO
             </p>
 
-            <form id="newsletterForm">
+            <h2>
+                Receba novidades da Lumière.
+            </h2>
+
+            <p>
+                Cadastre seu e-mail para receber lançamentos
+                e ofertas.
+            </p>
+
+
+            <form
+                id="newsletterForm"
+                action="https://formspree.io/f/mdekzjyv"
+                method="POST"
+            >
+
                 <input
                     type="email"
                     id="email"
+                    name="email"
                     placeholder="Seu melhor e-mail"
+                    autocomplete="email"
                     required
                 >
 
-                <button type="submit">INSCREVER</button>
+
+                <!-- Assunto enviado para o Formspree -->
+
+                <input
+                    type="hidden"
+                    name="_subject"
+                    value="Novo cadastro na newsletter — Lumière"
+                >
+
+
+                <button type="submit">
+                    INSCREVER
+                </button>
+
             </form>
 
-            <p id="newsletterMessage" class="message"></p>
+
+            <!-- Mensagem do formulário -->
+
+            <p
+                id="newsletterMessage"
+                class="message"
+                aria-live="polite"
+            ></p>
+
         </section>
 
     </main>
 
-    <!-- RODAPÉ -->
+
+    <!-- FOOTER -->
+
     <footer id="contato">
-        <div class="footer-logo">LUMIÈRE</div>
 
         <div>
-            <h4>Atendimento</h4>
-            <p>Segunda a sexta</p>
-            <p>09h às 18h</p>
+
+            <div class="footer-logo">
+                LUMIÈRE
+            </div>
+
         </div>
 
-        <div>
-            <h4>Contato</h4>
-            <p>contato@lumiere.com</p>
-            <p>+55 (11) 99999-9999</p>
-        </div>
 
         <div>
-            <h4>Redes sociais</h4>
-            <p>Instagram</p>
-            <p>TikTok</p>
+
+            <h4>
+                Atendimento
+            </h4>
+
+            <p>
+                Segunda a sexta
+            </p>
+
+            <p>
+                09h às 18h
+            </p>
+
         </div>
+
+
+        <div>
+
+            <h4>
+                Contato
+            </h4>
+
+            <p>
+                contato@lumiere.com
+            </p>
+
+            <p>
+                +55 (11) 99999-9999
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                Redes sociais
+            </h4>
+
+            <p>
+                Instagram
+            </p>
+
+            <p>
+                TikTok
+            </p>
+
+        </div>
+
     </footer>
 
-    <!-- CARRINHO -->
-    <div id="cartOverlay" class="overlay"></div>
 
-    <aside id="cart" class="cart">
+    <!-- FUNDO DO CARRINHO -->
+
+    <div
+        id="cartOverlay"
+        class="overlay"
+    ></div>
+
+
+    <!-- CARRINHO -->
+
+    <aside
+        id="cart"
+        class="cart"
+        aria-label="Carrinho de compras"
+    >
 
         <div class="cart-header">
-            <h2>Seu carrinho</h2>
-            <button id="closeCart">×</button>
+
+            <h2>
+                Seu carrinho
+            </h2>
+
+            <button
+                id="closeCart"
+                type="button"
+                aria-label="Fechar carrinho"
+            >
+                ×
+            </button>
+
         </div>
 
-        <div id="cartItems" class="cart-items">
+
+        <div
+            id="cartItems"
+            class="cart-items"
+        >
+
             <p class="empty-cart">
                 Seu carrinho está vazio.
             </p>
+
         </div>
+
 
         <div class="cart-footer">
 
             <div class="total">
-                <span>Total</span>
-                <strong id="cartTotal">R$ 0,00</strong>
+
+                <span>
+                    Total
+                </span>
+
+                <strong id="cartTotal">
+                    R$ 0,00
+                </strong>
+
             </div>
 
-            <button id="checkoutBtn" class="checkout">
+
+            <button
+                id="checkoutBtn"
+                class="checkout"
+                type="button"
+            >
                 FINALIZAR COMPRA
             </button>
 
@@ -225,31 +503,68 @@
 
     </aside>
 
-    <!-- MODAL -->
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <button id="closeModal" class="close-modal">×</button>
 
-            <h2>A história da Lumière</h2>
+    <!-- MODAL -->
+
+    <div
+        id="modal"
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+    >
+
+        <div class="modal-content">
+
+            <button
+                id="closeModal"
+                class="close-modal"
+                type="button"
+                aria-label="Fechar"
+            >
+                ×
+            </button>
+
+
+            <h2>
+                A história da Lumière
+            </h2>
+
 
             <p>
-                Criamos a Lumière para celebrar a individualidade através
-                da moda. Cada peça foi pensada para combinar elegância,
+                Criamos a Lumière para celebrar a individualidade
+                através da moda.
+            </p>
+
+
+            <p>
+                Cada peça foi pensada para combinar elegância,
                 conforto e personalidade.
             </p>
 
+
             <p>
-                Nossa proposta é oferecer uma experiência de compra simples,
-                moderna e inspiradora.
+                Nossa proposta é oferecer uma experiência de compra
+                simples, moderna e inspiradora.
             </p>
 
-            <button id="modalOk" class="btn">
+
+            <button
+                id="modalOk"
+                class="btn"
+                type="button"
+            >
                 ENTENDI
             </button>
+
         </div>
+
     </div>
+
+
+    <!-- JAVASCRIPT -->
 
     <script src="script.js"></script>
 
 </body>
+
 </html>

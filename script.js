@@ -453,3 +453,58 @@ checkoutBtn.addEventListener("click", () => {
 renderProducts();
 
 updateCart();
+
+/* =========================
+   NEWSLETTER / FORMSPREE
+========================= */
+
+newsletterForm.addEventListener("submit", async (event) => {
+
+    event.preventDefault();
+
+    const formData = new FormData(newsletterForm);
+
+    newsletterMessage.textContent = "Enviando...";
+    newsletterMessage.style.color = "#777";
+
+    try {
+
+        const response = await fetch(
+            newsletterForm.action,
+            {
+                method: "POST",
+                body: formData,
+                headers: {
+                    "Accept": "application/json"
+                }
+            }
+        );
+
+        if (response.ok) {
+
+            const email = document.getElementById("email").value;
+
+            newsletterMessage.textContent =
+                `Obrigado! ${email} foi cadastrado com sucesso.`;
+
+            newsletterMessage.style.color = "#54734d";
+
+            newsletterForm.reset();
+
+        } else {
+
+            newsletterMessage.textContent =
+                "Não foi possível enviar. Tente novamente.";
+
+            newsletterMessage.style.color = "#a33";
+        }
+
+    } catch (error) {
+
+        newsletterMessage.textContent =
+            "Ocorreu um erro de conexão. Tente novamente.";
+
+        newsletterMessage.style.color = "#a33";
+    }
+
+});
