@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       ELEMENTOS DO HTML
+       ELEMENTOS
     ===================================================== */
 
     const productsContainer =
@@ -142,6 +142,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const checkoutBtn =
         document.getElementById("checkoutBtn");
+
+    const checkoutModal =
+        document.getElementById("checkoutModal");
+
+    const closeCheckout =
+        document.getElementById("closeCheckout");
+
+    const orderForm =
+        document.getElementById("orderForm");
+
+    const orderMessage =
+        document.getElementById("orderMessage");
+
+    const orderDetails =
+        document.getElementById("orderDetails");
+
+    const orderTotal =
+        document.getElementById("orderTotal");
+
+    const orderSubmit =
+        document.getElementById("orderSubmit");
 
 
     /* =====================================================
@@ -230,6 +251,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     </button>
 
                 </div>
+
             `;
 
             productsContainer.appendChild(
@@ -381,6 +403,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     >
                         Remover
                     </button>
+
                 `;
 
                 cartItems.appendChild(
@@ -408,25 +431,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         if (cartCount) {
-
-            cartCount.textContent =
-                quantity;
-
+            cartCount.textContent = quantity;
         }
 
 
         if (cartTotal) {
-
             cartTotal.textContent =
                 formatPrice(total);
-
         }
 
     }
 
 
     /* =====================================================
-       REMOVER PRODUTO DO CARRINHO
+       REMOVER PRODUTO
     ===================================================== */
 
     if (cartItems) {
@@ -473,20 +491,11 @@ document.addEventListener("DOMContentLoaded", function () {
     function openCart() {
 
         if (cartElement) {
-
-            cartElement.classList.add(
-                "active"
-            );
-
+            cartElement.classList.add("active");
         }
 
-
         if (cartOverlay) {
-
-            cartOverlay.classList.add(
-                "active"
-            );
-
+            cartOverlay.classList.add("active");
         }
 
     }
@@ -499,57 +508,33 @@ document.addEventListener("DOMContentLoaded", function () {
     function closeCart() {
 
         if (cartElement) {
-
-            cartElement.classList.remove(
-                "active"
-            );
-
+            cartElement.classList.remove("active");
         }
 
-
         if (cartOverlay) {
-
-            cartOverlay.classList.remove(
-                "active"
-            );
-
+            cartOverlay.classList.remove("active");
         }
 
     }
 
 
     if (cartBtn) {
-
-        cartBtn.addEventListener(
-            "click",
-            openCart
-        );
-
+        cartBtn.addEventListener("click", openCart);
     }
 
 
     if (closeCartBtn) {
-
-        closeCartBtn.addEventListener(
-            "click",
-            closeCart
-        );
-
+        closeCartBtn.addEventListener("click", closeCart);
     }
 
 
     if (cartOverlay) {
-
-        cartOverlay.addEventListener(
-            "click",
-            closeCart
-        );
-
+        cartOverlay.addEventListener("click", closeCart);
     }
 
 
     /* =====================================================
-       FILTRO DE CATEGORIA
+       FILTRO
     ===================================================== */
 
     if (categoryFilter) {
@@ -564,9 +549,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 if (category === "todos") {
 
-                    renderProducts(
-                        products
-                    );
+                    renderProducts(products);
 
                     return;
                 }
@@ -575,19 +558,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 const filtered =
                     products.filter(
                         function (product) {
-
-                            return (
-                                product.category ===
-                                category
-                            );
-
+                            return product.category === category;
                         }
                     );
 
 
-                renderProducts(
-                    filtered
-                );
+                renderProducts(filtered);
 
             }
         );
@@ -610,15 +586,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
 
-                searchBox.classList.toggle(
-                    "active"
-                );
+                searchBox.classList.toggle("active");
 
 
                 if (
-                    searchBox.classList.contains(
-                        "active"
-                    ) &&
+                    searchBox.classList.contains("active") &&
                     searchInput
                 ) {
 
@@ -649,7 +621,6 @@ document.addEventListener("DOMContentLoaded", function () {
                         function (product) {
 
                             return (
-
                                 product.name
                                     .toLowerCase()
                                     .includes(search)
@@ -659,16 +630,13 @@ document.addEventListener("DOMContentLoaded", function () {
                                 product.category
                                     .toLowerCase()
                                     .includes(search)
-
                             );
 
                         }
                     );
 
 
-                renderProducts(
-                    filtered
-                );
+                renderProducts(filtered);
 
             }
         );
@@ -685,11 +653,7 @@ document.addEventListener("DOMContentLoaded", function () {
         aboutBtn.addEventListener(
             "click",
             function () {
-
-                modal.classList.add(
-                    "active"
-                );
-
+                modal.classList.add("active");
             }
         );
 
@@ -701,11 +665,7 @@ document.addEventListener("DOMContentLoaded", function () {
         closeModal.addEventListener(
             "click",
             function () {
-
-                modal.classList.remove(
-                    "active"
-                );
-
+                modal.classList.remove("active");
             }
         );
 
@@ -717,11 +677,7 @@ document.addEventListener("DOMContentLoaded", function () {
         modalOk.addEventListener(
             "click",
             function () {
-
-                modal.classList.remove(
-                    "active"
-                );
-
+                modal.classList.remove("active");
             }
         );
 
@@ -734,14 +690,8 @@ document.addEventListener("DOMContentLoaded", function () {
             "click",
             function (event) {
 
-                if (
-                    event.target === modal
-                ) {
-
-                    modal.classList.remove(
-                        "active"
-                    );
-
+                if (event.target === modal) {
+                    modal.classList.remove("active");
                 }
 
             }
@@ -751,7 +701,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       FORMSPREE
+       NEWSLETTER — FORMSPREE
     ===================================================== */
 
     if (newsletterForm) {
@@ -759,11 +709,6 @@ document.addEventListener("DOMContentLoaded", function () {
         newsletterForm.addEventListener(
             "submit",
             async function (event) {
-
-                /*
-                 * Impede o navegador de sair da página.
-                 * O envio será feito pelo JavaScript.
-                 */
 
                 event.preventDefault();
 
@@ -775,67 +720,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
                 const email =
-                    document.getElementById(
-                        "email"
-                    );
+                    document.getElementById("email");
 
-
-                const message =
-                    document.getElementById(
-                        "message"
-                    );
-
-
-                /* =========================================
-                   VERIFICAÇÃO DO E-MAIL
-                ========================================= */
 
                 if (!email || !email.value.trim()) {
 
-                    if (newsletterMessage) {
+                    newsletterMessage.textContent =
+                        "Digite seu e-mail.";
 
-                        newsletterMessage.textContent =
-                            "Digite seu e-mail.";
-
-                        newsletterMessage.style.color =
-                            "#a33";
-
-                    }
-
-                    email.focus();
+                    newsletterMessage.style.color =
+                        "#a33";
 
                     return;
 
                 }
 
-
-                /*
-                 * O navegador também verifica o formato
-                 * por causa do type="email".
-                 */
 
                 if (!email.checkValidity()) {
 
-                    if (newsletterMessage) {
+                    newsletterMessage.textContent =
+                        "Digite um e-mail válido.";
 
-                        newsletterMessage.textContent =
-                            "Digite um e-mail válido.";
-
-                        newsletterMessage.style.color =
-                            "#a33";
-
-                    }
-
-                    email.focus();
+                    newsletterMessage.style.color =
+                        "#a33";
 
                     return;
 
                 }
 
-
-                /* =========================================
-                   ESTADO DE ENVIO
-                ========================================= */
 
                 if (button) {
 
@@ -847,36 +759,20 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
 
-                if (newsletterMessage) {
+                newsletterMessage.textContent =
+                    "Enviando...";
 
-                    newsletterMessage.textContent =
-                        "Enviando...";
-
-                    newsletterMessage.style.color =
-                        "#777";
-
-                }
+                newsletterMessage.style.color =
+                    "#777";
 
 
                 try {
-
-                    /*
-                     * FormData pega automaticamente:
-                     *
-                     * email
-                     * message
-                     * _subject
-                     */
 
                     const formData =
                         new FormData(
                             newsletterForm
                         );
 
-
-                    /*
-                     * Envia para o endpoint do Formspree.
-                     */
 
                     const response =
                         await fetch(
@@ -894,107 +790,41 @@ document.addEventListener("DOMContentLoaded", function () {
                         );
 
 
-                    /* =====================================
-                       ENVIO REALIZADO
-                    ===================================== */
-
                     if (response.ok) {
 
-                        if (newsletterMessage) {
+                        newsletterMessage.textContent =
+                            "Cadastro realizado com sucesso!";
 
-                            newsletterMessage.textContent =
-                                "Cadastro realizado com sucesso!";
-
-                            newsletterMessage.style.color =
-                                "#54734d";
-
-                        }
-
-
-                        /*
-                         * Limpa os campos depois
-                         * do envio bem-sucedido.
-                         */
+                        newsletterMessage.style.color =
+                            "#54734d";
 
                         newsletterForm.reset();
 
-
                     } else {
 
-                        /*
-                         * Tenta descobrir a mensagem
-                         * enviada pelo Formspree.
-                         */
-
-                        let errorMessage =
-                            "Não foi possível enviar o cadastro.";
-
-                        try {
-
-                            const data =
-                                await response.json();
-
-                            if (
-                                data &&
-                                data.errors &&
-                                data.errors.length > 0
-                            ) {
-
-                                errorMessage =
-                                    data.errors
-                                        .map(function (error) {
-                                            return error.message;
-                                        })
-                                        .join(" ");
-
-                            }
-
-                        } catch (error) {
-
-                            /*
-                             * Se o Formspree não retornar
-                             * JSON, mantém a mensagem padrão.
-                             */
-
-                        }
-
-
-                        if (newsletterMessage) {
-
-                            newsletterMessage.textContent =
-                                errorMessage;
-
-                            newsletterMessage.style.color =
-                                "#a33";
-
-                        }
-
-                    }
-
-                } catch (error) {
-
-                    console.error(
-                        "Erro no envio para o Formspree:",
-                        error
-                    );
-
-
-                    if (newsletterMessage) {
-
                         newsletterMessage.textContent =
-                            "Erro de conexão. Verifique sua internet e tente novamente.";
+                            "Não foi possível enviar. Tente novamente.";
 
                         newsletterMessage.style.color =
                             "#a33";
 
                     }
 
+                } catch (error) {
+
+                    console.error(
+                        "Erro no Formspree:",
+                        error
+                    );
+
+                    newsletterMessage.textContent =
+                        "Erro de conexão. Tente novamente.";
+
+                    newsletterMessage.style.color =
+                        "#a33";
+
                 }
 
-
-                /* =========================================
-                   RESTAURAR BOTÃO
-                ========================================= */
 
                 if (button) {
 
@@ -1012,7 +842,68 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       CHECKOUT
+       PREPARAR PEDIDO
+    ===================================================== */
+
+    function prepareOrder() {
+
+        if (cart.length === 0) {
+            return null;
+        }
+
+
+        let total = 0;
+
+        let orderText =
+            "NOVO PEDIDO — LUMIÈRE\n\n";
+
+
+        orderText +=
+            "PRODUTOS:\n";
+
+
+        cart.forEach(function (item) {
+
+            const itemTotal =
+                item.price * item.quantity;
+
+
+            total += itemTotal;
+
+
+            orderText +=
+                "\nProduto: " +
+                item.name +
+                "\nQuantidade: " +
+                item.quantity +
+                "\nPreço unitário: " +
+                formatPrice(item.price) +
+                "\nSubtotal: " +
+                formatPrice(itemTotal) +
+                "\n";
+
+        });
+
+
+        orderText +=
+            "\n--------------------------------\n";
+
+
+        orderText +=
+            "TOTAL DO PEDIDO: " +
+            formatPrice(total);
+
+
+        return {
+            text: orderText,
+            total: total
+        };
+
+    }
+
+
+    /* =====================================================
+       ABRIR CHECKOUT
     ===================================================== */
 
     if (checkoutBtn) {
@@ -1028,27 +919,69 @@ document.addEventListener("DOMContentLoaded", function () {
                     );
 
                     return;
+
                 }
 
 
-                let total = 0;
+                const order =
+                    prepareOrder();
 
 
-                cart.forEach(function (item) {
-
-                    total +=
-                        item.price *
-                        item.quantity;
-
-                });
+                if (!order) {
+                    return;
+                }
 
 
-                alert(
-                    "Pedido criado com sucesso!\n\n" +
-                    "Total: " +
-                    formatPrice(total) +
-                    "\n\n" +
-                    "Checkout de demonstração."
+                if (orderDetails) {
+
+                    orderDetails.value =
+                        order.text;
+
+                }
+
+
+                if (orderTotal) {
+
+                    orderTotal.value =
+                        formatPrice(order.total);
+
+                }
+
+
+                if (orderMessage) {
+
+                    orderMessage.textContent =
+                        "";
+
+                }
+
+
+                if (checkoutModal) {
+
+                    checkoutModal.classList.add(
+                        "active"
+                    );
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       FECHAR CHECKOUT
+    ===================================================== */
+
+    if (closeCheckout) {
+
+        closeCheckout.addEventListener(
+            "click",
+            function () {
+
+                checkoutModal.classList.remove(
+                    "active"
                 );
 
             }
@@ -1058,16 +991,213 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       TECLA ESC
+       CLICAR FORA DO CHECKOUT
+    ===================================================== */
+
+    if (checkoutModal) {
+
+        checkoutModal.addEventListener(
+            "click",
+            function (event) {
+
+                if (
+                    event.target === checkoutModal
+                ) {
+
+                    checkoutModal.classList.remove(
+                        "active"
+                    );
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       ENVIAR PEDIDO PARA FORMSPREE
+    ===================================================== */
+
+    if (orderForm) {
+
+        orderForm.addEventListener(
+            "submit",
+            async function (event) {
+
+                event.preventDefault();
+
+
+                if (cart.length === 0) {
+
+                    orderMessage.textContent =
+                        "Seu carrinho está vazio.";
+
+                    orderMessage.style.color =
+                        "#a33";
+
+                    return;
+
+                }
+
+
+                /*
+                 * Atualiza os dados do pedido
+                 * antes do envio.
+                 */
+
+                const order =
+                    prepareOrder();
+
+
+                if (!order) {
+                    return;
+                }
+
+
+                orderDetails.value =
+                    order.text;
+
+
+                orderTotal.value =
+                    formatPrice(order.total);
+
+
+                /* =========================================
+                   BOTÃO
+                ========================================= */
+
+                if (orderSubmit) {
+
+                    orderSubmit.disabled = true;
+
+                    orderSubmit.textContent =
+                        "ENVIANDO PEDIDO...";
+
+                }
+
+
+                orderMessage.textContent =
+                    "Enviando pedido...";
+
+                orderMessage.style.color =
+                    "#777";
+
+
+                try {
+
+                    const formData =
+                        new FormData(orderForm);
+
+
+                    const response =
+                        await fetch(
+                            orderForm.action,
+                            {
+                                method: "POST",
+
+                                body: formData,
+
+                                headers: {
+                                    "Accept":
+                                        "application/json"
+                                }
+                            }
+                        );
+
+
+                    /* =====================================
+                       PEDIDO ENVIADO
+                    ===================================== */
+
+                    if (response.ok) {
+
+                        orderMessage.textContent =
+                            "Pedido enviado com sucesso! Obrigado pela sua compra.";
+
+                        orderMessage.style.color =
+                            "#54734d";
+
+
+                        /*
+                         * Limpa o carrinho.
+                         */
+
+                        cart = [];
+
+                        updateCart();
+
+
+                        /*
+                         * Limpa o formulário.
+                         */
+
+                        orderForm.reset();
+
+
+                        /*
+                         * Fecha o carrinho.
+                         */
+
+                        closeCart();
+
+
+                    } else {
+
+                        orderMessage.textContent =
+                            "Não foi possível enviar o pedido. Tente novamente.";
+
+                        orderMessage.style.color =
+                            "#a33";
+
+                    }
+
+                } catch (error) {
+
+                    console.error(
+                        "Erro ao enviar pedido:",
+                        error
+                    );
+
+
+                    orderMessage.textContent =
+                        "Erro de conexão. Verifique sua internet e tente novamente.";
+
+                    orderMessage.style.color =
+                        "#a33";
+
+                }
+
+
+                /* =========================================
+                   RESTAURAR BOTÃO
+                ========================================= */
+
+                if (orderSubmit) {
+
+                    orderSubmit.disabled = false;
+
+                    orderSubmit.textContent =
+                        "ENVIAR PEDIDO";
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       CHECKOUT — TECLA ESC
     ===================================================== */
 
     document.addEventListener(
         "keydown",
         function (event) {
 
-            if (
-                event.key !== "Escape"
-            ) {
+            if (event.key !== "Escape") {
                 return;
             }
 
@@ -1076,20 +1206,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
             if (modal) {
+                modal.classList.remove("active");
+            }
 
-                modal.classList.remove(
-                    "active"
-                );
 
+            if (checkoutModal) {
+                checkoutModal.classList.remove("active");
             }
 
 
             if (searchBox) {
-
-                searchBox.classList.remove(
-                    "active"
-                );
-
+                searchBox.classList.remove("active");
             }
 
         }

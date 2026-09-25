@@ -12,7 +12,6 @@
         content="Lumière — moda, estilo e peças exclusivas."
     >
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -21,13 +20,13 @@
         rel="stylesheet"
     >
 
-    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <!-- HEADER -->
+
     <header class="header">
 
         <div class="logo">
@@ -37,11 +36,8 @@
         <nav class="nav">
 
             <a href="#inicio">Início</a>
-
             <a href="#colecao">Coleção</a>
-
             <a href="#sobre">Sobre</a>
-
             <a href="#contato">Contato</a>
 
         </nav>
@@ -88,8 +84,6 @@
 
     </div>
 
-
-    <!-- CONTEÚDO -->
 
     <main>
 
@@ -217,9 +211,6 @@
 
             </div>
 
-
-            <!-- PRODUTOS -->
-
             <div
                 id="products"
                 class="products-grid"
@@ -300,7 +291,7 @@
         </section>
 
 
-        <!-- NEWSLETTER / FORMSPREE -->
+        <!-- NEWSLETTER -->
 
         <section class="newsletter">
 
@@ -317,10 +308,8 @@
                 e ofertas.
             </p>
 
-
-            <!-- FORMULÁRIO FORMSPREE -->
-
             <form
+                id="newsletterForm"
                 action="https://formspree.io/f/mdekzjyv"
                 method="POST"
             >
@@ -338,7 +327,6 @@
                     required
                 >
 
-
                 <label for="message">
                     Mensagem:
                 </label>
@@ -350,15 +338,11 @@
                     rows="4"
                 ></textarea>
 
-
-                <!-- ASSUNTO DO E-MAIL -->
-
                 <input
                     type="hidden"
                     name="_subject"
                     value="Novo cadastro na newsletter — Lumière"
                 >
-
 
                 <button
                     type="submit"
@@ -368,9 +352,6 @@
                 </button>
 
             </form>
-
-
-            <!-- MENSAGEM DO FORMULÁRIO -->
 
             <p
                 id="newsletterMessage"
@@ -395,7 +376,6 @@
 
         </div>
 
-
         <div>
 
             <h4>
@@ -412,7 +392,6 @@
 
         </div>
 
-
         <div>
 
             <h4>
@@ -428,7 +407,6 @@
             </p>
 
         </div>
-
 
         <div>
 
@@ -522,7 +500,142 @@
     </aside>
 
 
-    <!-- MODAL -->
+    <!-- MODAL DE PEDIDO -->
+
+    <div
+        id="checkoutModal"
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="checkoutTitle"
+    >
+
+        <div class="modal-content">
+
+            <button
+                id="closeCheckout"
+                class="close-modal"
+                type="button"
+                aria-label="Fechar"
+            >
+                ×
+            </button>
+
+            <h2 id="checkoutTitle">
+                Finalizar pedido
+            </h2>
+
+            <p>
+                Preencha seus dados para enviar o pedido.
+            </p>
+
+
+            <!-- FORMULÁRIO DO PEDIDO -->
+
+            <form
+                id="orderForm"
+                action="https://formspree.io/f/mdekzjyv"
+                method="POST"
+            >
+
+                <label for="customerName">
+                    Nome completo
+                </label>
+
+                <input
+                    type="text"
+                    id="customerName"
+                    name="nome"
+                    placeholder="Seu nome completo"
+                    required
+                >
+
+
+                <label for="customerEmail">
+                    E-mail
+                </label>
+
+                <input
+                    type="email"
+                    id="customerEmail"
+                    name="email_cliente"
+                    placeholder="seuemail@exemplo.com"
+                    required
+                >
+
+
+                <label for="customerPhone">
+                    Telefone
+                </label>
+
+                <input
+                    type="tel"
+                    id="customerPhone"
+                    name="telefone"
+                    placeholder="(11) 99999-9999"
+                    required
+                >
+
+
+                <label for="customerAddress">
+                    Endereço de entrega
+                </label>
+
+                <textarea
+                    id="customerAddress"
+                    name="endereco"
+                    placeholder="Rua, número, bairro, cidade e CEP"
+                    rows="4"
+                    required
+                ></textarea>
+
+
+                <!-- O JAVASCRIPT PREENCHERÁ ESTE CAMPO -->
+
+                <input
+                    type="hidden"
+                    id="orderDetails"
+                    name="pedido"
+                >
+
+
+                <input
+                    type="hidden"
+                    id="orderTotal"
+                    name="total"
+                >
+
+
+                <input
+                    type="hidden"
+                    name="_subject"
+                    value="NOVO PEDIDO — LUMIÈRE"
+                >
+
+
+                <button
+                    type="submit"
+                    id="orderSubmit"
+                    class="checkout"
+                >
+                    ENVIAR PEDIDO
+                </button>
+
+            </form>
+
+
+            <p
+                id="orderMessage"
+                class="message"
+                aria-live="polite"
+            ></p>
+
+        </div>
+
+    </div>
+
+
+    <!-- MODAL SOBRE -->
 
     <div
         id="modal"
@@ -542,29 +655,24 @@
                 ×
             </button>
 
-
             <h2>
                 A história da Lumière
             </h2>
-
 
             <p>
                 Criamos a Lumière para celebrar a individualidade
                 através da moda.
             </p>
 
-
             <p>
                 Cada peça foi pensada para combinar elegância,
                 conforto e personalidade.
             </p>
 
-
             <p>
                 Nossa proposta é oferecer uma experiência de compra
                 simples, moderna e inspiradora.
             </p>
-
 
             <button
                 id="modalOk"
@@ -578,8 +686,6 @@
 
     </div>
 
-
-    <!-- JAVASCRIPT -->
 
     <script src="script.js"></script>
 
