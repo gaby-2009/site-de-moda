@@ -188,7 +188,6 @@
 
                 </div>
 
-
                 <select
                     id="categoryFilter"
                     aria-label="Filtrar produtos"
@@ -219,7 +218,7 @@
             </div>
 
 
-            <!-- PRODUTOS CARREGADOS PELO JAVASCRIPT -->
+            <!-- PRODUTOS -->
 
             <div
                 id="products"
@@ -265,7 +264,6 @@
         >
 
             <div class="about-image"></div>
-
 
             <div class="about-content">
 
@@ -320,11 +318,17 @@
             </p>
 
 
+            <!-- FORMULÁRIO FORMSPREE -->
+
             <form
                 id="newsletterForm"
                 action="https://formspree.io/f/mdekzjyv"
                 method="POST"
             >
+
+                <label for="email">
+                    Seu e-mail:
+                </label>
 
                 <input
                     type="email"
@@ -336,7 +340,19 @@
                 >
 
 
-                <!-- Assunto enviado para o Formspree -->
+                <label for="message">
+                    Mensagem:
+                </label>
+
+                <textarea
+                    id="message"
+                    name="message"
+                    placeholder="Digite sua mensagem"
+                    rows="4"
+                ></textarea>
+
+
+                <!-- ASSUNTO DO E-MAIL -->
 
                 <input
                     type="hidden"
@@ -345,14 +361,17 @@
                 >
 
 
-                <button type="submit">
+                <button
+                    type="submit"
+                    id="newsletterSubmit"
+                >
                     INSCREVER
                 </button>
 
             </form>
 
 
-            <!-- Mensagem do formulário -->
+            <!-- MENSAGEM DO FORMULÁRIO -->
 
             <p
                 id="newsletterMessage"

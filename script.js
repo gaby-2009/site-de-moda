@@ -192,10 +192,8 @@ document.addEventListener("DOMContentLoaded", function () {
             const productElement =
                 document.createElement("article");
 
-
             productElement.className =
                 "product";
-
 
             productElement.innerHTML = `
 
@@ -208,7 +206,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     >
 
                 </div>
-
 
                 <div class="product-info">
 
@@ -233,9 +230,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     </button>
 
                 </div>
-
             `;
-
 
             productsContainer.appendChild(
                 productElement
@@ -305,9 +300,7 @@ document.addEventListener("DOMContentLoaded", function () {
             function (event) {
 
                 const button =
-                    event.target.closest(
-                        ".add-cart"
-                    );
+                    event.target.closest(".add-cart");
 
 
                 if (!button) {
@@ -358,10 +351,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 const cartItem =
                     document.createElement("div");
 
-
                 cartItem.className =
                     "cart-item";
-
 
                 cartItem.innerHTML = `
 
@@ -390,9 +381,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     >
                         Remover
                     </button>
-
                 `;
-
 
                 cartItems.appendChild(
                     cartItem
@@ -771,12 +760,17 @@ document.addEventListener("DOMContentLoaded", function () {
             "submit",
             async function (event) {
 
+                /*
+                 * Impede o navegador de sair da página.
+                 * O envio será feito pelo JavaScript.
+                 */
+
                 event.preventDefault();
 
 
                 const button =
-                    newsletterForm.querySelector(
-                        'button[type="submit"]'
+                    document.getElementById(
+                        "newsletterSubmit"
                     );
 
 
@@ -786,14 +780,17 @@ document.addEventListener("DOMContentLoaded", function () {
                     );
 
 
-                if (!email) {
-                    return;
-                }
+                const message =
+                    document.getElementById(
+                        "message"
+                    );
 
 
-                if (
-                    email.value.trim() === ""
-                ) {
+                /* =========================================
+                   VERIFICAÇÃO DO E-MAIL
+                ========================================= */
+
+                if (!email || !email.value.trim()) {
 
                     if (newsletterMessage) {
 
@@ -805,10 +802,40 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     }
 
+                    email.focus();
+
                     return;
 
                 }
 
+
+                /*
+                 * O navegador também verifica o formato
+                 * por causa do type="email".
+                 */
+
+                if (!email.checkValidity()) {
+
+                    if (newsletterMessage) {
+
+                        newsletterMessage.textContent =
+                            "Digite um e-mail válido.";
+
+                        newsletterMessage.style.color =
+                            "#a33";
+
+                    }
+
+                    email.focus();
+
+                    return;
+
+                }
+
+
+                /* =========================================
+                   ESTADO DE ENVIO
+                ========================================= */
 
                 if (button) {
 
@@ -833,15 +860,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 try {
 
+                    /*
+                     * FormData pega automaticamente:
+                     *
+                     * email
+                     * message
+                     * _subject
+                     */
+
                     const formData =
                         new FormData(
                             newsletterForm
                         );
 
 
+                    /*
+                     * Envia para o endpoint do Formspree.
+                     */
+
                     const response =
                         await fetch(
-                            "https://formspree.io/f/mdekzjyv",
+                            newsletterForm.action,
                             {
                                 method: "POST",
 
@@ -854,6 +893,10 @@ document.addEventListener("DOMContentLoaded", function () {
                             }
                         );
 
+
+                    /* =====================================
+                       ENVIO REALIZADO
+                    ===================================== */
 
                     if (response.ok) {
 
@@ -868,14 +911,58 @@ document.addEventListener("DOMContentLoaded", function () {
                         }
 
 
+                        /*
+                         * Limpa os campos depois
+                         * do envio bem-sucedido.
+                         */
+
                         newsletterForm.reset();
 
+
                     } else {
+
+                        /*
+                         * Tenta descobrir a mensagem
+                         * enviada pelo Formspree.
+                         */
+
+                        let errorMessage =
+                            "Não foi possível enviar o cadastro.";
+
+                        try {
+
+                            const data =
+                                await response.json();
+
+                            if (
+                                data &&
+                                data.errors &&
+                                data.errors.length > 0
+                            ) {
+
+                                errorMessage =
+                                    data.errors
+                                        .map(function (error) {
+                                            return error.message;
+                                        })
+                                        .join(" ");
+
+                            }
+
+                        } catch (error) {
+
+                            /*
+                             * Se o Formspree não retornar
+                             * JSON, mantém a mensagem padrão.
+                             */
+
+                        }
+
 
                         if (newsletterMessage) {
 
                             newsletterMessage.textContent =
-                                "Não foi possível enviar. Verifique o Formspree e tente novamente.";
+                                errorMessage;
 
                             newsletterMessage.style.color =
                                 "#a33";
@@ -887,7 +974,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 } catch (error) {
 
                     console.error(
-                        "Erro no Formspree:",
+                        "Erro no envio para o Formspree:",
                         error
                     );
 
@@ -895,7 +982,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     if (newsletterMessage) {
 
                         newsletterMessage.textContent =
-                            "Erro de conexão. Tente novamente.";
+                            "Erro de conexão. Verifique sua internet e tente novamente.";
 
                         newsletterMessage.style.color =
                             "#a33";
@@ -904,6 +991,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 }
 
+
+                /* =========================================
+                   RESTAURAR BOTÃO
+                ========================================= */
 
                 if (button) {
 
