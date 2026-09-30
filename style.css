@@ -1054,3 +1054,28 @@ footer h3 {
     }
 
 }
+
+.checkout-box select {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ddd;
+    background: white;
+    outline: none;
+    margin-bottom: 5px;
+}
+
+.checkout-box select:focus {
+    border-color: var(--black);
+}
+
+.payment-info {
+    background: var(--cream);
+    padding: 15px;
+    margin: 8px 0 10px;
+    font-size: 13px;
+    color: #666;
+}
+
+.payment-info strong {
+    color: var(--black);
+}

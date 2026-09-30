@@ -971,3 +971,69 @@ document.addEventListener("keydown", event => {
 
 renderProducts();
 renderCart();
+
+const paymentMethod =
+    document.getElementById("paymentMethod");
+
+const paymentDetails =
+    document.getElementById("paymentDetails");
+
+
+paymentMethod.addEventListener("change", () => {
+
+    const method = paymentMethod.value;
+
+    paymentDetails.innerHTML = "";
+
+    if (method === "Pix") {
+
+        paymentDetails.innerHTML = `
+            <div class="payment-info">
+                <strong>Pagamento via Pix</strong>
+                <br>
+                A chave Pix será enviada pelo WhatsApp
+                após a confirmação do pedido.
+            </div>
+        `;
+
+    }
+
+    if (method === "Cartão de crédito") {
+
+        paymentDetails.innerHTML = `
+            <div class="payment-info">
+                <strong>Cartão de crédito</strong>
+                <br>
+                O pagamento será combinado pelo WhatsApp
+                após o envio do pedido.
+            </div>
+        `;
+
+    }
+
+    if (method === "Cartão de débito") {
+
+        paymentDetails.innerHTML = `
+            <div class="payment-info">
+                <strong>Cartão de débito</strong>
+                <br>
+                O pagamento será combinado pelo WhatsApp
+                após o envio do pedido.
+            </div>
+        `;
+
+    }
+
+    if (method === "Dinheiro") {
+
+        paymentDetails.innerHTML = `
+            <div class="payment-info">
+                <strong>Pagamento em dinheiro</strong>
+                <br>
+                Informe pelo WhatsApp se precisa de troco.
+            </div>
+        `;
+
+    }
+
+});
