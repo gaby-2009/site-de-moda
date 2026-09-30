@@ -1,40 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>LUMIÈRE — Moda & Estilo</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <meta
         name="description"
-        content="Lumière — moda, estilo e peças exclusivas."
+        content="LUMIÈRE — Moda feminina contemporânea, elegante e atemporal."
     >
+
+    <title>LUMIÈRE — Moda & Estilo</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
         rel="stylesheet"
     >
 
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
 </head>
 
 <body>
 
-    <!-- HEADER -->
+    <!-- =========================
+         HEADER
+    ========================== -->
 
     <header class="header">
 
-        <div class="logo">
+        <a href="#inicio" class="logo">
             LUMIÈRE
-        </div>
+        </a>
 
-        <nav class="nav">
+        <nav class="nav" id="nav">
 
             <a href="#inicio">Início</a>
             <a href="#colecao">Coleção</a>
@@ -46,22 +50,31 @@
         <div class="header-actions">
 
             <button
-                id="searchBtn"
-                class="icon-btn"
+                class="header-icon"
+                id="searchButton"
                 type="button"
                 aria-label="Pesquisar"
             >
-                ⌕
+                <span>⌕</span>
             </button>
 
             <button
-                id="cartBtn"
-                class="cart-btn"
+                class="header-icon cart-button"
+                id="cartButton"
                 type="button"
                 aria-label="Abrir carrinho"
             >
-                🛍️
-                <span id="cartCount">0</span>
+                <span>🛍</span>
+                <b id="cartCount">0</b>
+            </button>
+
+            <button
+                class="mobile-menu-button"
+                id="mobileMenuButton"
+                type="button"
+                aria-label="Abrir menu"
+            >
+                ☰
             </button>
 
         </div>
@@ -69,52 +82,59 @@
     </header>
 
 
-    <!-- BUSCA -->
+    <!-- =========================
+         SEARCH
+    ========================== -->
 
-    <div
-        id="searchBox"
-        class="search-box"
-    >
+    <div class="search-panel" id="searchPanel">
 
-        <input
-            type="text"
-            id="searchInput"
-            placeholder="Buscar produtos..."
-            autocomplete="off"
-        >
+        <div class="search-inner">
+
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Buscar por produto..."
+                autocomplete="off"
+            >
+
+            <button
+                id="closeSearch"
+                type="button"
+                aria-label="Fechar pesquisa"
+            >
+                ×
+            </button>
+
+        </div>
 
     </div>
 
 
     <main>
 
-        <!-- HERO -->
+        <!-- =========================
+             HERO
+        ========================== -->
 
-        <section
-            id="inicio"
-            class="hero"
-        >
+        <section class="hero" id="inicio">
 
             <div class="hero-content">
 
-                <p class="subtitle">
-                    NOVA COLEÇÃO 2026
+                <p class="eyebrow">
+                    NOVA COLEÇÃO · 2026
                 </p>
 
                 <h1>
                     Vista sua
-                    <span>essência.</span>
+                    <em>essência.</em>
                 </h1>
 
-                <p>
-                    Descubra peças criadas para quem transforma
-                    estilo em personalidade.
+                <p class="hero-description">
+                    Moda contemporânea para mulheres que transformam
+                    personalidade em estilo.
                 </p>
 
-                <a
-                    href="#colecao"
-                    class="btn"
-                >
+                <a href="#colecao" class="primary-button">
                     EXPLORAR COLEÇÃO
                 </a>
 
@@ -123,57 +143,66 @@
         </section>
 
 
-        <!-- CATEGORIAS -->
+        <!-- =========================
+             CATEGORIAS
+        ========================== -->
 
         <section class="categories">
 
-            <a
-                href="#colecao"
+            <button
                 class="category-card"
+                data-category="vestidos"
+                type="button"
             >
                 <span>01</span>
-                <h3>Vestidos</h3>
-            </a>
+                <strong>Vestidos</strong>
+                <small>Elegância em cada detalhe</small>
+            </button>
 
-            <a
-                href="#colecao"
+            <button
                 class="category-card"
+                data-category="blusas"
+                type="button"
             >
                 <span>02</span>
-                <h3>Blusas</h3>
-            </a>
+                <strong>Blusas</strong>
+                <small>Essenciais contemporâneos</small>
+            </button>
 
-            <a
-                href="#colecao"
+            <button
                 class="category-card"
+                data-category="calcas"
+                type="button"
             >
                 <span>03</span>
-                <h3>Calças</h3>
-            </a>
+                <strong>Calças</strong>
+                <small>Alfaiataria moderna</small>
+            </button>
 
-            <a
-                href="#colecao"
+            <button
                 class="category-card"
+                data-category="acessorios"
+                type="button"
             >
                 <span>04</span>
-                <h3>Acessórios</h3>
-            </a>
+                <strong>Acessórios</strong>
+                <small>Detalhes que fazem diferença</small>
+            </button>
 
         </section>
 
 
-        <!-- COLEÇÃO -->
+        <!-- =========================
+             PRODUTOS
+        ========================== -->
 
-        <section
-            id="colecao"
-            class="products-section"
-        >
+        <section class="collection" id="colecao">
 
-            <div class="section-header">
+            <div class="section-heading">
 
                 <div>
 
-                    <p class="subtitle">
+                    <p class="eyebrow">
                         SELEÇÃO LUMIÈRE
                     </p>
 
@@ -183,62 +212,69 @@
 
                 </div>
 
-                <select
-                    id="categoryFilter"
-                    aria-label="Filtrar produtos"
-                >
+                <div class="collection-controls">
 
-                    <option value="todos">
-                        Todos
-                    </option>
+                    <span id="productResult">
+                        8 produtos
+                    </span>
 
-                    <option value="vestidos">
-                        Vestidos
-                    </option>
+                    <select id="categoryFilter">
 
-                    <option value="blusas">
-                        Blusas
-                    </option>
+                        <option value="todos">
+                            Todas as categorias
+                        </option>
 
-                    <option value="calcas">
-                        Calças
-                    </option>
+                        <option value="vestidos">
+                            Vestidos
+                        </option>
 
-                    <option value="acessorios">
-                        Acessórios
-                    </option>
+                        <option value="blusas">
+                            Blusas
+                        </option>
 
-                </select>
+                        <option value="calcas">
+                            Calças
+                        </option>
+
+                        <option value="acessorios">
+                            Acessórios
+                        </option>
+
+                    </select>
+
+                </div>
 
             </div>
 
             <div
-                id="products"
                 class="products-grid"
+                id="productsGrid"
             ></div>
 
         </section>
 
 
-        <!-- BANNER -->
+        <!-- =========================
+             BANNER
+        ========================== -->
 
-        <section class="banner">
+        <section class="fashion-banner">
 
-            <div>
+            <div class="banner-content">
 
-                <p class="subtitle">
-                    ESSENCIAL • ELEGANTE • ATEMPORAL
+                <p class="eyebrow">
+                    ESSENCIAL · ELEGANTE · ATEMPORAL
                 </p>
 
                 <h2>
-                    Seu estilo,
+                    Seu estilo.
                     <br>
-                    suas regras.
+                    Suas regras.
                 </h2>
 
                 <a
                     href="#colecao"
-                    class="btn btn-light"
+                    class="light-button"
                 >
                     COMPRAR AGORA
                 </a>
@@ -248,18 +284,18 @@
         </section>
 
 
-        <!-- SOBRE -->
+        <!-- =========================
+             SOBRE
+        ========================== -->
 
-        <section
-            id="sobre"
-            class="about"
-        >
+        <section class="about" id="sobre">
 
-            <div class="about-image"></div>
+            <div class="about-image">
+            </div>
 
             <div class="about-content">
 
-                <p class="subtitle">
+                <p class="eyebrow">
                     SOBRE A LUMIÈRE
                 </p>
 
@@ -280,8 +316,8 @@
                 </p>
 
                 <button
-                    id="aboutBtn"
-                    class="btn"
+                    class="primary-button"
+                    id="storyButton"
                     type="button"
                 >
                     CONHEÇA NOSSA HISTÓRIA
@@ -292,11 +328,13 @@
         </section>
 
 
-        <!-- NEWSLETTER -->
+        <!-- =========================
+             NEWSLETTER
+        ========================== -->
 
         <section class="newsletter">
 
-            <p class="subtitle">
+            <p class="eyebrow">
                 FIQUE POR DENTRO
             </p>
 
@@ -305,83 +343,58 @@
             </h2>
 
             <p>
-                Cadastre seu e-mail para receber lançamentos
-                e ofertas.
+                Lançamentos, novidades e condições especiais
+                diretamente no seu e-mail.
             </p>
 
-            <form
-                id="newsletterForm"
-                action="https://formspree.io/f/mdekzjyv"
-                method="POST"
-            >
-
-                <label for="email">
-                    Seu e-mail:
-                </label>
+            <form id="newsletterForm">
 
                 <input
                     type="email"
-                    id="email"
-                    name="email"
+                    id="newsletterEmail"
                     placeholder="Seu melhor e-mail"
-                    autocomplete="email"
                     required
                 >
 
-                <label for="message">
-                    Mensagem:
-                </label>
-
-                <textarea
-                    id="message"
-                    name="message"
-                    placeholder="Digite sua mensagem"
-                    rows="4"
-                ></textarea>
-
-                <input
-                    type="hidden"
-                    name="_subject"
-                    value="Novo cadastro na newsletter — Lumière"
-                >
-
-                <button
-                    type="submit"
-                    id="newsletterSubmit"
-                >
+                <button type="submit">
                     INSCREVER
                 </button>
 
             </form>
 
-            <p
+            <div
                 id="newsletterMessage"
-                class="message"
-                aria-live="polite"
-            ></p>
+                class="form-message"
+            ></div>
 
         </section>
 
     </main>
 
 
-    <!-- FOOTER -->
+    <!-- =========================
+         FOOTER
+    ========================== -->
 
     <footer id="contato">
 
-        <div>
+        <div class="footer-brand">
 
             <div class="footer-logo">
                 LUMIÈRE
             </div>
 
+            <p>
+                Moda que traduz sua essência.
+            </p>
+
         </div>
 
         <div>
 
-            <h4>
+            <h3>
                 Atendimento
-            </h4>
+            </h3>
 
             <p>
                 Segunda a sexta
@@ -395,9 +408,9 @@
 
         <div>
 
-            <h4>
+            <h3>
                 Contato
-            </h4>
+            </h3>
 
             <p>
                 contato@lumiere.com
@@ -411,44 +424,56 @@
 
         <div>
 
-            <h4>
+            <h3>
                 Redes sociais
-            </h4>
+            </h3>
 
-            <p>
+            <a href="#" target="_blank">
                 Instagram
-            </p>
+            </a>
 
-            <p>
+            <a href="#" target="_blank">
                 TikTok
-            </p>
+            </a>
 
         </div>
 
     </footer>
 
 
-    <!-- FUNDO DO CARRINHO -->
+    <!-- =========================
+         OVERLAY
+    ========================== -->
 
     <div
-        id="cartOverlay"
         class="overlay"
+        id="overlay"
     ></div>
 
 
-    <!-- CARRINHO -->
+    <!-- =========================
+         CART
+    ========================== -->
 
     <aside
-        id="cart"
         class="cart"
-        aria-label="Carrinho de compras"
+        id="cart"
+        aria-label="Carrinho"
     >
 
         <div class="cart-header">
 
-            <h2>
-                Seu carrinho
-            </h2>
+            <div>
+
+                <span class="eyebrow">
+                    SUA SELEÇÃO
+                </span>
+
+                <h2>
+                    Carrinho
+                </h2>
+
+            </div>
 
             <button
                 id="closeCart"
@@ -460,22 +485,14 @@
 
         </div>
 
-
         <div
-            id="cartItems"
             class="cart-items"
-        >
-
-            <p class="empty-cart">
-                Seu carrinho está vazio.
-            </p>
-
-        </div>
-
+            id="cartItems"
+        ></div>
 
         <div class="cart-footer">
 
-            <div class="total">
+            <div class="cart-total">
 
                 <span>
                     Total
@@ -487,13 +504,20 @@
 
             </div>
 
-
             <button
-                id="checkoutBtn"
-                class="checkout"
+                class="checkout-button"
+                id="checkoutButton"
                 type="button"
             >
-                FINALIZAR COMPRA
+                FINALIZAR PEDIDO
+            </button>
+
+            <button
+                class="continue-button"
+                id="continueShopping"
+                type="button"
+            >
+                CONTINUAR COMPRANDO
             </button>
 
         </div>
@@ -501,43 +525,118 @@
     </aside>
 
 
-    <!-- MODAL DE PEDIDO -->
+    <!-- =========================
+         PRODUCT MODAL
+    ========================== -->
 
     <div
-        id="checkoutModal"
         class="modal"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="checkoutTitle"
+        id="productModal"
     >
 
-        <div class="modal-content">
+        <div class="modal-box product-modal-box">
 
             <button
-                id="closeCheckout"
-                class="close-modal"
+                class="modal-close"
+                data-close="productModal"
                 type="button"
-                aria-label="Fechar"
             >
                 ×
             </button>
 
-            <h2 id="checkoutTitle">
-                Finalizar pedido
+            <div id="productModalContent"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         STORY MODAL
+    ========================== -->
+
+    <div
+        class="modal"
+        id="storyModal"
+    >
+
+        <div class="modal-box">
+
+            <button
+                class="modal-close"
+                data-close="storyModal"
+                type="button"
+            >
+                ×
+            </button>
+
+            <p class="eyebrow">
+                LUMIÈRE
+            </p>
+
+            <h2>
+                Nossa história
             </h2>
 
             <p>
-                Preencha seus dados para enviar o pedido.
+                A Lumière nasceu de uma ideia simples:
+                criar roupas que façam você se sentir
+                verdadeiramente você.
             </p>
 
+            <p>
+                Trabalhamos com uma estética minimalista,
+                feminina e atemporal, buscando criar peças
+                que possam atravessar temporadas.
+            </p>
 
-            <!-- FORMULÁRIO DO PEDIDO -->
+            <p>
+                Para nós, moda é uma forma de expressão.
+                Não existe uma maneira certa de se vestir.
+                Existe a sua maneira.
+            </p>
 
-            <form
-                id="orderForm"
-                action="https://formspree.io/f/mdekzjyv"
-                method="POST"
+            <button
+                class="primary-button"
+                data-close="storyModal"
+                type="button"
             >
+                FECHAR
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         CHECKOUT MODAL
+    ========================== -->
+
+    <div
+        class="modal"
+        id="checkoutModal"
+    >
+
+        <div class="modal-box checkout-box">
+
+            <button
+                class="modal-close"
+                data-close="checkoutModal"
+                type="button"
+            >
+                ×
+            </button>
+
+            <p class="eyebrow">
+                FINALIZAR PEDIDO
+            </p>
+
+            <h2>
+                Seus dados
+            </h2>
+
+            <form id="checkoutForm">
 
                 <label for="customerName">
                     Nome completo
@@ -546,11 +645,9 @@
                 <input
                     type="text"
                     id="customerName"
-                    name="nome"
-                    placeholder="Seu nome completo"
                     required
+                    placeholder="Digite seu nome"
                 >
-
 
                 <label for="customerEmail">
                     E-mail
@@ -559,24 +656,20 @@
                 <input
                     type="email"
                     id="customerEmail"
-                    name="email_cliente"
-                    placeholder="seuemail@exemplo.com"
                     required
+                    placeholder="seuemail@email.com"
                 >
 
-
                 <label for="customerPhone">
-                    Telefone
+                    WhatsApp
                 </label>
 
                 <input
                     type="tel"
                     id="customerPhone"
-                    name="telefone"
-                    placeholder="(11) 99999-9999"
                     required
+                    placeholder="(11) 99999-9999"
                 >
-
 
                 <label for="customerAddress">
                     Endereço de entrega
@@ -584,104 +677,29 @@
 
                 <textarea
                     id="customerAddress"
-                    name="endereco"
-                    placeholder="Rua, número, bairro, cidade e CEP"
                     rows="4"
                     required
+                    placeholder="Rua, número, bairro, cidade e CEP"
                 ></textarea>
 
-
-                <!-- O JAVASCRIPT PREENCHERÁ ESTE CAMPO -->
-
-                <input
-                    type="hidden"
-                    id="orderDetails"
-                    name="pedido"
-                >
-
-
-                <input
-                    type="hidden"
-                    id="orderTotal"
-                    name="total"
-                >
-
-
-                <input
-                    type="hidden"
-                    name="_subject"
-                    value="NOVO PEDIDO — LUMIÈRE"
-                >
-
+                <div
+                    class="checkout-summary"
+                    id="checkoutSummary"
+                ></div>
 
                 <button
+                    class="checkout-button"
                     type="submit"
-                    id="orderSubmit"
-                    class="checkout"
                 >
-                    ENVIAR PEDIDO
+                    ENVIAR PEDIDO PELO WHATSAPP
                 </button>
 
             </form>
 
-
-            <p
-                id="orderMessage"
-                class="message"
-                aria-live="polite"
-            ></p>
-
-        </div>
-
-    </div>
-
-
-    <!-- MODAL SOBRE -->
-
-    <div
-        id="modal"
-        class="modal"
-        role="dialog"
-        aria-modal="true"
-    >
-
-        <div class="modal-content">
-
-            <button
-                id="closeModal"
-                class="close-modal"
-                type="button"
-                aria-label="Fechar"
-            >
-                ×
-            </button>
-
-            <h2>
-                A história da Lumière
-            </h2>
-
-            <p>
-                Criamos a Lumière para celebrar a individualidade
-                através da moda.
-            </p>
-
-            <p>
-                Cada peça foi pensada para combinar elegância,
-                conforto e personalidade.
-            </p>
-
-            <p>
-                Nossa proposta é oferecer uma experiência de compra
-                simples, moderna e inspiradora.
-            </p>
-
-            <button
-                id="modalOk"
-                class="btn"
-                type="button"
-            >
-                ENTENDI
-            </button>
+            <div
+                class="form-message"
+                id="checkoutMessage"
+            ></div>
 
         </div>
 
@@ -691,5 +709,4 @@
     <script src="script.js"></script>
 
 </body>
-
 </html>
