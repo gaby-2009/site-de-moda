@@ -32,7 +32,7 @@ const products = [
         name: "Macacão",
         category: "blusas",
         price: 239.90,
-        image: "https://www.aguaderosas.com.br/macacao-longo-valentina-em-alfaiataria-marrom?srsltid=AYCX9vKfG4gkVQ6SYjtO_shfHh-reMAXgRsJvLd8IgKl1l0v0iUsuU17",
+        image: "https://www.fernandatavaresstore.com.br/macacoes/macacoes-longos-e-midi/macacao-alfaiataria-pantalona-betina-azul-marinho?srsltid=AYCX9vJyAIxgTGvsf3imWEVi_Y4qwuB4SObquCXiU1lHvgko1QyRWKTJ",
         description: "Essencial versátil para looks elegantes durante toda a semana."
     },
     {
