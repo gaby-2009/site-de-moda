@@ -27,14 +27,7 @@ const products = [
         image: "https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=800&q=85",
         description: "Blusa minimalista com acabamento delicado e caimento confortável."
     },
-    {
-        id: 4,
-        name: "Macacão",
-        category: "blusas",
-        price: 239.90,
-        image: "https://www.fernandatavaresstore.com.br/macacoes/macacoes-longos-e-midi/macacao-alfaiataria-pantalona-betina-azul-marinho?srsltid=AYCX9vJyAIxgTGvsf3imWEVi_Y4qwuB4SObquCXiU1lHvgko1QyRWKTJ",
-        description: "Essencial versátil para looks elegantes durante toda a semana."
-    },
+    
     {
         id: 5,
         name: "Conjunto",
