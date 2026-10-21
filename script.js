@@ -7,7 +7,7 @@ const products = [
         id: 1,
         name: "Vestido Aurora",
         category: "vestidos",
-        price: 389.90,
+        price: 289.90,
         image: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=800&q=85",
         description: "Vestido elegante de corte fluido, perfeito para ocasiões especiais."
     },
@@ -15,7 +15,7 @@ const products = [
         id: 2,
         name: "Vestido Étoile",
         category: "vestidos",
-        price: 429.90,
+        price: 129.90,
         image: "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=800&q=85",
         description: "Uma peça feminina e sofisticada para composições contemporâneas."
     },
@@ -29,18 +29,18 @@ const products = [
     },
     {
         id: 4,
-        name: "Blusa Claire",
+        name: "Macacão",
         category: "blusas",
         price: 239.90,
-        image: "https://images.unsplash.com/photo-1564257577054-0c9b4c0c2a3c?auto=format&fit=crop&w=800&q=85",
+        image: "https://www.aguaderosas.com.br/macacao-longo-valentina-em-alfaiataria-marrom?srsltid=AYCX9vKfG4gkVQ6SYjtO_shfHh-reMAXgRsJvLd8IgKl1l0v0iUsuU17",
         description: "Essencial versátil para looks elegantes durante toda a semana."
     },
     {
         id: 5,
-        name: "Calça Paris",
+        name: "Conjunto",
         category: "calcas",
         price: 329.90,
-        image: "https://images.unsplash.com/photo-1506629905607-d9e7c1c4f9d7?auto=format&fit=crop&w=800&q=85",
+        image: "https://cherrymodas.com/cdn/shop/files/1775529902e6a78f5e06cc8c2af65911d48a8cddc2_thumbnail.webp?v=1780770302&width=832",
         description: "Calça de alfaiataria moderna com silhueta sofisticada."
     },
     {
